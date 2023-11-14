@@ -9,7 +9,7 @@ def countnucleaotides(DNA):
             C += 1
         elif nucleotide == 'G':
             G += 1
-        else:
+        elif nucleotide == 'T':
             T += 1
     return f'{A} {C} {G} {T}'
 
