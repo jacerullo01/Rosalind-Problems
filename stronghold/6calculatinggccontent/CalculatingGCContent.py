@@ -1,32 +1,22 @@
-dataset = '''>Rosalind_6404
-CCTGCGGAAGATCGGCACTAGAATAGCCAGAACCGTTTCTCTGAGGCTTCCGGCCTTCCCTCCCACTAATAATTCTGAGG
->Rosalind_5959
-CCATCGGTAGCGCATCCTTAGTCCAATTAAGTCCCTATCCAGGCGCTCCGCCGAAGGTCTATATCCATTTGTCAGCAGACACGC
->Rosalind_0808
-CCACCCTCGTGGTATGGCTAGGCATTCAGGAACCGGAGAACGCTTCAGACCAGCCCGGACTGGGAACCTGCGGGCAGTAGGTGGAAT
-'''
-dataset = dataset.split('\n')
+with open ('rosalind_gc.txt', 'r') as file:
+    dataset = file.read().strip().replace('\n', '')
+dataset = dataset.split('>Rosalind_')
+if dataset[0] == '':
+    del dataset[0]
 print(dataset)
-def getDNA(dataset):
-    DNAList = []
-    for DNA in range(len(dataset)):
-        if DNA%2 == 1:
-            DNAList+=dataset[DNA]
+DNA = {}
+for element in dataset:
+    key = element[:4]
+    DNA[key] = list(element[4:])
 
-    return DNAList
-
-print(getDNA(dataset))
-
-DNA1 = list(dataset[1])
-DNA2 = list(dataset[3])
-DNA3 = list(dataset[5])
+print(DNA)
 def getCG(DNA):
     CG = 0
     for nuc in range(len(DNA)):
         if DNA[nuc] == 'C' or DNA[nuc] == 'G':
             CG += 1
     result = CG/len(DNA)
-    return result
-print(DNA1)
-print(getCG(DNA1))
+    return result*100
 
+for i in DNA:
+    print(f'Rosalind_{i}\n{getCG(DNA[i])}')
