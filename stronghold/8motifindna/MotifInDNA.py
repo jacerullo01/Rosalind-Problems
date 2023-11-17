@@ -1,4 +1,4 @@
-with open ('test.txt', 'r') as file:
+with open ('rosalind_subs.txt', 'r') as file:
     lines = file.read().strip().split('\n')
 s = lines[0]
 t = lines[1]
