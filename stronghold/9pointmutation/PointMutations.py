@@ -1,6 +1,5 @@
 with open ('rosalind_hamm.txt', 'r') as file:
     DNA = file.read().strip().split('\n')
-print(DNA)
 DNA1 = list(DNA[0])
 DNA2 = list(DNA[1])
 mutations = 0
