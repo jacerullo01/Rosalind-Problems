@@ -1,5 +1,7 @@
-n = 87
-m = 19
+with open ('rosalind_fibd.txt', 'r') as file:
+    data = file.read().strip().split(' ')
+n = int(data[0])
+m = int(data[1])
 pop = [1, 1]
 for i in range(2, n):
     x = pop[i-1] + pop[i-2]
