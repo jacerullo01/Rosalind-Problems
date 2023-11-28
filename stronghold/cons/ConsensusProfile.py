@@ -36,5 +36,3 @@ for counts in zip(profile['A'], profile['C'], profile['G'], profile['T']):
 print(consensus)
 for nucleotide in ['A', 'C', 'G', 'T']:
     print(f"{nucleotide}: {' '.join(map(str, profile[nucleotide]))}")
-
-
