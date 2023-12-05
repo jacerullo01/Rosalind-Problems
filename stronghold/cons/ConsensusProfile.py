@@ -1,4 +1,4 @@
-with open ('rosalind_cons1.txt', 'r') as file:
+with open ('rosalind_cons.txt', 'r') as file:
     dataset = file.read().strip().replace('\n', '')
 dataset = dataset.split('>Rosalind_')
 if dataset[0] == '':
@@ -12,7 +12,7 @@ def count(DNA, nuc):
 DNA = []
 profile = []
 for i in range(len(dataset)):
-    DNA.append(list(dataset[i][1:]))
+    DNA.append(list(dataset[i][4:]))
 # [1:] could cause problems if the number is more than 1 digit
 counter = [[row[i] for row in DNA] for i in range(len(DNA[0]))]
 profile = {'A': [], 'C': [], 'G': [], 'T': []}
