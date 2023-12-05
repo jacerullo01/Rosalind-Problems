@@ -1,6 +1,7 @@
 with open ('rosalind_revc.txt', 'r') as file:
     s = file.read()
 sc = list(s[::-1])
+print(sc)
 scSize = len(sc)
 A, C, G, T = [], [], [], []
 for nuc in range(scSize):
